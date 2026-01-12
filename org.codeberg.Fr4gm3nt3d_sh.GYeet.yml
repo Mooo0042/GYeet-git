@@ -1,6 +1,6 @@
 app-id: org.codeberg.Fr4gm3nt3d_sh.GYeet
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: "47"
 sdk: org.gnome.Sdk
 command: gyeet
 
@@ -10,11 +10,15 @@ finish-args:
   - --share=ipc
   - --device=dri
   - --share=network
+  # Required for GTK4 application registration
   - --socket=session-bus
-  - --socket=system-bus
+  - --talk-name=org.freedesktop.portal.Desktop
+  - --talk-name=org.freedesktop.portal.FileChooser
+  # Required to detect Steam and Proton installations
   - --filesystem=xdg-data/Steam:ro
   - --filesystem=~/.steam:ro
-  - --filesystem=home
+  # Required to download VotV game files
+  - --filesystem=xdg-download
 
 modules:
   - name: gyeet
