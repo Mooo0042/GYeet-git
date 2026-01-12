@@ -20,3 +20,4 @@ config.json
 
 #flatpak
 .flatpak-builder/
+build-dir/

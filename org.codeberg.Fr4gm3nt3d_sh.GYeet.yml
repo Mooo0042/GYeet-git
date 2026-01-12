@@ -1,7 +1,7 @@
 app-id: org.codeberg.Fr4gm3nt3d_sh.GYeet
-runtime: org.freedesktop.Platform
-runtime-version: '23.08'
-sdk: org.freedesktop.Sdk
+runtime: org.gnome.Platform
+runtime-version: '47'
+sdk: org.gnome.Sdk
 command: gyeet
 
 finish-args:
@@ -9,10 +9,12 @@ finish-args:
   - --socket=fallback-x11
   - --share=ipc
   - --device=dri
-  # Add network access if your app needs it
   - --share=network
-  # Add filesystem access if needed
-  # - --filesystem=home
+  - --socket=session-bus
+  - --socket=system-bus
+  - --filesystem=xdg-data/Steam:ro
+  - --filesystem=~/.steam:ro
+  - --filesystem=home
 
 modules:
   - name: gyeet
