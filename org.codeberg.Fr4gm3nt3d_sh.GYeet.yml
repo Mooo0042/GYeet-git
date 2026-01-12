@@ -1,0 +1,37 @@
+app-id: org.codeberg.Fr4gm3nt3d_sh.GYeet
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: gyeet
+
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=ipc
+  - --device=dri
+  # Add network access if your app needs it
+  - --share=network
+  # Add filesystem access if needed
+  # - --filesystem=home
+
+modules:
+  - name: gyeet
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 gyeet-linux /app/bin/gyeet
+      - install -Dm644 org.codeberg.Fr4gm3nt3d_sh.GYeet.desktop /app/share/applications/org.codeberg.Fr4gm3nt3d_sh.GYeet.desktop
+      - install -Dm644 votv-1.png /app/share/icons/hicolor/256x256/apps/org.codeberg.Fr4gm3nt3d_sh.GYeet.png
+      - install -Dm644 org.codeberg.Fr4gm3nt3d_sh.GYeet.metainfo.xml /app/share/metainfo/org.codeberg.Fr4gm3nt3d_sh.GYeet.metainfo.xml
+    sources:
+      - type: file
+        url: https://codeberg.org/Fr4gm3nt3d_sh/GYeet/releases/download/v1.0.0/gyeet-linux
+        sha256: 4ba986237a4988e0cb3cb1eac668e31766370753e8609eccefb68f6089bbec65
+        dest-filename: gyeet-linux
+      - type: file
+        path: org.codeberg.Fr4gm3nt3d_sh.GYeet.desktop
+      - type: file
+        path: org.codeberg.Fr4gm3nt3d_sh.GYeet.metainfo.xml
+      - type: file
+        url: https://codeberg.org/Fr4gm3nt3d_sh/GYeet/raw/branch/main/assets/votv.png
+        sha256: 2379cbd683c0876d440db8bdd00ecce4def4f401e6ed37e0f9ffe3875e1133ac
+        dest-filename: votv-1.png

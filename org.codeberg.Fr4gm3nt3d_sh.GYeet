@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.codeberg.Fr4gm3nt3d_sh.GYeet</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>GYeet</name>
+  <summary>An easy to use VotV Launcher</summary>
+  
+  <description>
+    <p>
+      GYeet is a simple and user-friendly launcher for the game Voices of the Void (VotV). It provides an easy way to install, update, and launch the game, ensuring that players have a seamless experience.
+      It features:
+    -  Modern GTK4 interface
+    -  Dark theme
+    -  Version selection - Choose any available VotV version
+    -  Real-time console output
+    -  Automatic settings persistence
+    -  SHA256 verification for downloads
+    -  Proton version detection
+    -  Thread-safe operations
+    </p>
+  </description>
+  
+  
+  <url type="homepage">https://codeberg.org/Fr4gm3nt3d_sh/GYeet</url>
+  <url type="bugtracker">https://codeberg.org/Fr4gm3nt3d_sh/GYeet/issues</url>
+  
+  <developer_name>Fr4gm3nt3d.sh</developer_name>
+  
+  <launchable type="desktop-id">org.codeberg.Fr4gm3nt3d_sh.GYeet.desktop</launchable>
+  
+  <provides>
+    <binary>gyeet</binary>
+  </provides>
+  
+  <releases>
+    <release version="1.0.0" date="2025-01-12">
+      <description>
+        <p>Initial release</p>
+      </description>
+    </release>
+  </releases>
+  
+  <content_rating type="oars-1.1" />
+</component>
