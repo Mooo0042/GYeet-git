@@ -6,7 +6,7 @@
 
 A modern, smooth GTK4-based GUI for the YeetPatch VotV patcher with Proton support for Linux.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![License](https://img.shields.io/badge/license-GPLv3-purple.svg)
 ![Rust](https://img.shields.io/badge/rust-1.70+-orange.svg)
 
 ## Direct Installation (Linux)
@@ -139,7 +139,7 @@ Once the prerequisites are installed, you can build and install GYeet:
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the GPLv3 License. See the `LICENSE` file for details.
 
 ## Contributing
 
