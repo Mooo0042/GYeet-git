@@ -2,12 +2,11 @@ use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 use std::collections::HashMap;
 use std::fs;
-use std::io::{self, BufRead, BufReader, Read};
+use std::io::{BufRead, BufReader, Read};
 use std::path::{Path, PathBuf};
 use std::process::{Command, Stdio};
 use std::sync::{Arc, Mutex};
 use std::thread;
-use progress_bar::*;
 
 const PATCH_MANIFEST_URL: &str = "https://votv.dev/patcher_assets/patch_manifest.json";
 const INSTALL_CATALOG_URL: &str = "https://votv.dev/patcher_assets/index_manifest.json";
@@ -584,27 +583,6 @@ impl Patcher {
         eprintln!("[DEBUG] run_desync completed successfully");
 
         Ok(())
-    }
-
-    /// Extract percentage from a line like "Unpacking [===] 45.67% 2m30s"
-    fn extract_percentage(line: &str) -> Option<f32> {
-        // Find the percentage sign
-        if let Some(pct_pos) = line.find('%') {
-            // Look backwards for the number
-            let before_pct = &line[..pct_pos];
-            
-            // Split by whitespace and brackets, take the last token
-            let tokens: Vec<&str> = before_pct
-                .split(|c: char| c.is_whitespace() || c == '[' || c == ']')
-                .collect();
-            
-            for token in tokens.iter().rev() {
-                if let Ok(num) = token.trim().parse::<f32>() {
-                    return Some(num);
-                }
-            }
-        }
-        None
     }
 }
 

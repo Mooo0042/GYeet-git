@@ -18,7 +18,7 @@ DESKTOP_DIR="$HOME/.local/share/applications"
 ICON_DIR="$HOME/.local/share/icons/hicolor/256x256/apps"
 
 echo -e "${GREEN}GYeet Installer${NC}"
-echo "================================"
+echo "================================="
 
 # Check dependencies
 echo -e "\n${YELLOW}Checking dependencies...${NC}"
